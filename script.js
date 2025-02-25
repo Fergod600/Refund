@@ -155,10 +155,17 @@ function updateTotals() {
 }
 
 //Evento que captura o clique nos itens da lista 
-expenseList.addEventListener("click",function(event){
+expenseList.addEventListener("click", function(event) {
     
     //Verifica se o elemento clicado é um evento de remover
-    if(event.target.classList.contains(remove-icon)){
+    if(event.target.classList.contains("remove-icon")){
+        //Obtém a li pai do elemento clicado
+        const item = event.target.closest(".expense")
 
+        //Remove o item
+        item.remove()
     }
+
+    //Atualiza os totais 
+    updateTotals()
 })
